@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated-Text</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        canvas {
+            position: absolute;
+        }
+        input {
+            position: absolute;
+            z-index: 10;
+            border-radius: 50px;
+            width: 10em;
+            text-align: center;
+            padding: 5px;
+            font-size: x-large;
+            transform: translateX(-50%) translateY(-50%);
+            left: 50%;
+        }
+        #animatetext {
+            top: 20%;
+        }
+        #size {
+            top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="animatetext" placeholder="Enter for animation">
+    <input type="number" id="size" placeholder="Enter text size" min="12" max="256" value="32">
+    <script src="libraries/p5.js"></script>
+    <script src="animatedText.js"></script>
+</body>
+</html>
