@@ -1,5 +1,5 @@
 let grid;
-let scl = 5;
+let scl = 10;
 let cols, rows;
 let hueVal = 0;
 
@@ -87,3 +87,4 @@ function make2DArray(cols, rows) {
     }
     return arr;
 }
+
