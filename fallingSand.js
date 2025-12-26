@@ -64,7 +64,7 @@ function mouseDragged() {
     if (constrain(mouseX, 0, width - 1) !== mouseX) return
     let mouseCol = floor(mouseX / scl);
     let mouseRow = floor(mouseY / scl);
-    let matrix = 20;
+    let matrix = 5;
     let extent = floor(matrix / 2);
     for (let i = -extent; i <= extent; i++) {
         for (let j = -extent; j <= extent; j++) {
@@ -87,6 +87,7 @@ function make2DArray(cols, rows) {
     }
     return arr;
 }
+
 
 
 
