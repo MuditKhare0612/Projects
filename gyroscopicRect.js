@@ -1,5 +1,4 @@
-let rotX = Number(0.0.toFixed(1));
-let rotY = 1.3;
+
 let rectangle;
 
 function setup() {
@@ -18,10 +17,10 @@ function Rect() {
     this.gravityDir = createVector(0, 1);
     this.vel = createVector(0, 0);
     this.move = () => {
-        let signRotY = rotY / abs(rotY) || 1;
-        let gScalarX = abs(rotX - Math.PI / 2) * signRotY;
+        let signRotY = rotationY / abs(rotationY) || 1;
+        let gScalarX = abs(rotationX - Math.PI / 2) * signRotY;
         this.gravityDir.x = map(gScalarX, -Math.PI / 2, Math.PI / 2, -1, 1);
-        this.gravityDir.y = map(rotX, -Math.PI / 2, Math.PI / 2, -1, 1);
+        this.gravityDir.y = map(rotationX, -Math.PI / 2, Math.PI / 2, -1, 1);
         this.gravity = 9.8/frameRate();
         this.vel.x += this.gravityDir.x * this.gravity;
         this.vel.y += this.gravityDir.y * this.gravity;
