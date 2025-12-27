@@ -63,9 +63,11 @@ function Ball() {
         if (this.pos.y + this.radius + this.vel > rectPos[1] + rectSize[1]) this.direction.y = -1, hitPos.y = this.pos.y + this.radius + this.vel, hit = true;
         else if (this.pos.y - this.radius - this.vel < rectPos[1]) this.direction.y = 1, hitPos.y = this.pos.y - this.radius - this.vel, hit = true;
         if (hit) {
-            hitPos.x = constrain(hitPos.x, rectPos[0], rectPos[0] + rectSize[0]);
-            hitPos.y = constrain(hitPos.y, rectPos[1], rectPos[1] + rectSize[1]);
-            this.hitPoses.push(hitPos);
+            hitPos.x = float(constrain(hitPos.x, rectPos[0], rectPos[0] + rectSize[0]));
+            hitPos.y = float(constrain(hitPos.y, rectPos[1], rectPos[1] + rectSize[1]));
+            if (!this.hitPoses.some(p => p.x === hitPos.x && p.y === hitPos.y)) {
+                this.hitPoses.push(hitPos);
+            }
         }
     }
     this.update = () => {
