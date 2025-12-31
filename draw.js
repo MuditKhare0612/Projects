@@ -33,7 +33,12 @@ window.mouseDragged = () => {
         objects[objects.length - 1].push({ x: mouseX, y: mouseY });
     }
 };
-
+window.mouseReleased = () => {
+    if (mouseButton === LEFT) {
+        objects.push([]);
+    }
+}
 window.onbeforeunload = () => {
     remove();
 };
+
