@@ -1,0 +1,83 @@
+{
+    "body": {
+        "torso": {
+            "length": 50,
+            "width": 30,
+            "rot": 0,
+            "worldRot": 0
+        },
+        "head": {
+            "parent": "torso",
+            "radius": 10,
+            "anchor": {
+                "x": 0,
+                "y": -35
+            },
+            "rot": 0
+        },
+        "upperArm1": {
+            "parent": "torso",
+            "length": 25,
+            "width": 5,
+            "rot": -20,
+            "parentEnd": {
+                "x": 15,
+                "y": -25
+            }
+        },
+        "upperArm2": {
+            "parent": "torso",
+            "length": 25,
+            "width": 5,
+            "rot": 20,
+            "parentEnd": {
+                "x": -15,
+                "y": -25
+            }
+        },
+        "lowerArm1": {
+            "parent": "upperArm1",
+            "length": 25,
+            "width": 5,
+            "rot": 20
+        },
+        "lowerArm2": {
+            "parent": "upperArm2",
+            "length": 25,
+            "width": 5,
+            "rot": -20
+        },
+        "upperLeg1": {
+            "parent": "torso",
+            "length": 25,
+            "width": 5,
+            "rot": 0,
+            "parentEnd": {
+                "x": 12,
+                "y": 25
+            }            
+        },
+        "upperLeg2": {
+            "parent": "torso",
+            "length": 25,
+            "width": 5,
+            "rot": 0,
+            "parentEnd": {
+                "x": -12,
+                "y": 25
+            }
+        },
+        "lowerLeg1": {
+            "parent": "upperLeg1",
+            "length": 25,
+            "width": 5,
+            "rot": 0
+        },
+        "lowerLeg2": {
+            "parent": "upperLeg2",
+            "length": 25,
+            "width": 5,
+            "rot": 0
+        }
+    }
+}

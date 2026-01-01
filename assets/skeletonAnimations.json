@@ -1,0 +1,36 @@
+{
+    "idle": {
+        "duration": 120,
+        "loop": false,
+        "bones": {
+            "torso": {
+                "rot": {
+                    "type": "sin",
+                    "amp": 2,
+                    "speed": 1
+                }
+            },
+            "head": {
+                "rot": {
+                    "type": "sin",
+                    "amp": 4,
+                    "speed": 1
+                }
+            },
+            "upperArm1": {
+                "rot": {
+                    "type": "sin",
+                    "amp": 180,
+                    "speed": 1
+                }
+            },
+            "upperArm2": {
+                "rot": {
+                    "type": "sin",
+                    "amp": 10,
+                    "speed": 1
+                }
+            }
+        }
+    }
+}
