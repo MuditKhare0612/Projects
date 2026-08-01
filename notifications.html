@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        input, textarea {
+            border-radius: 10px;
+        }
+        .heading {
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            padding: 3px;
+            font-size: large;
+        }
+        .body {
+            font-family: Arial;
+            padding: 3px;
+            width: 300px;
+            resize: none;
+            text-align: center;
+        }
+        .submit {
+            width: 200px;
+            height: 50px;
+            font-size: 18px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <form id="notificationForm">
+        <input type="text" name="heading" class="heading" placeholder="Enter The Heading" required>
+        <textarea name="body" class="body" placeholder="Enter The Body" required></textarea>
+        <input type="submit" value="Send Notification" class="submit">
+    </form>
+
+    <script>
+        if ("Notification" in window) {
+            if (Notification.permission !== "granted" && Notification.permission !== "denied") {
+                Notification.requestPermission();
+            }
+        } else {
+            alert("This browser does not support desktop notifications.");
+        }
+
+        const form = document.getElementById('notificationForm');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const heading = formData.get('heading');
+            const body = formData.get('body');
+            
+            if (Notification.permission === "granted") {
+                new Notification(heading, {
+                    body: body,
+                    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSggSDV-DTYSQ_JVmS55N-aTNLLu23Qf62Z0PY9zUikPQ&s=10"
+                });
+            } else if (Notification.permission === "denied") {
+                alert("Notifications are blocked! Please enable them in your browser settings.");
+            } else {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        new Notification(heading, { body: body });
+                    }
+                });
+            }
+            
+            form.reset();
+        });
+    </script>
+</body>
+</html>
